@@ -6,8 +6,8 @@ public class Hotel {
     private String name;
     private String country;
     private String city;
-    private int stars;
-    private ArrayList<Room> rooms;
+    private double stars;
+    private ArrayList<Room> rooms = new ArrayList<>();
 
 
     public Hotel(String name, String country, String city, int stars, ArrayList<Room> rooms) {
@@ -17,6 +17,10 @@ public class Hotel {
         this.stars = stars;
         this.rooms = rooms;
     }
+
+    public Hotel(){}
+
+    public Hotel(String name, String country, String city, double stars, ArrayList<Room> filteredRooms){}
 
     public String getName() {
         return name;
@@ -42,11 +46,11 @@ public class Hotel {
         this.city = city;
     }
 
-    public int getStars() {
+    public double getStars() {
         return stars;
     }
 
-    public void setStars(int stars) {
+    public void setStars(double stars) {
         this.stars = stars;
     }
 
@@ -57,4 +61,11 @@ public class Hotel {
     public void setRooms(ArrayList<Room> rooms) {
         this.rooms = rooms;
     }
+
+    public void addRoom(Room room)
+    {
+        rooms.add(room);
+    }
+
+
 }

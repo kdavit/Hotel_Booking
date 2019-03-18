@@ -1,27 +1,25 @@
 package Models;
 
 public class Room {
-    private int number;
-    private int price;
+    private double number;
+    private double price;
 
-    public Room(int number, int price) {
-        this.number = number;
-        this.price = price;
-    }
+    public Room(){}
 
-    public int getNumber() {
+
+    public double getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(double number) {
         this.number = number;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
