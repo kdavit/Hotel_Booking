@@ -56,7 +56,7 @@ public class DataLoader {
                         room.setPrice(c.getNumericCellValue());
                         break;
                     case 2:
-                        hotelList.get(((int)Math.floor(c.getNumericCellValue()-1))).addRoom(room);
+                        hotelList.get(((int)c.getNumericCellValue()-1)).addRoom(room);
                         break;
                 }
             }
