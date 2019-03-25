@@ -1,5 +1,5 @@
-import Models.Hotel;
-import Models.Room;
+import model.Hotel;
+import model.Room;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,15 +18,16 @@ public class Filter {
     }
 
 
-    public List<Hotel> filterHotels(String country, String city, double stars) {
+    public List<Hotel> filterHotels(String country, String city, double stars, double price) {
         List<Hotel> filteredHotels = new ArrayList<>();
+        List<Room> filteredRooms = new ArrayList<>();
         for (Hotel hotel : hotels) {
 
-            if (hotel.getCountry().equals(country)) {
+            if (country.equals(hotel.getCountry())) {
 
-                if (hotel.getCity().equals(city)) {
+                if (city.equals(hotel.getCity())) {
 
-                    if (hotel.getStars() == stars) {
+                    if (stars == hotel.getStars()) {
 
                         filteredHotels.add(hotel);
                     }
@@ -34,24 +35,21 @@ public class Filter {
             }
         }
 
-        return filteredHotels;
-    }
-
-
-    public List<Room> filterRooms(List<Hotel> hotels,double price) {
-        List<Room> filteredRooms = new ArrayList<>();
-
-        for (Hotel hotel: hotels)
-        {
-            for (Room room: hotel.getRooms()){
-                if (price == room.getPrice()){
+        for (int i = 0; i < filteredHotels.size(); i++) {
+            for (Room room : filteredHotels.get(i).getRooms()) {
+                if (price == room.getPrice()) {
                     filteredRooms.add(room);
                 }
+                filteredHotels.get(i).setRooms(filteredRooms);
             }
         }
 
-
-        return filteredRooms;
+        return filteredHotels;
     }
-
 }
+
+
+
+
+
+

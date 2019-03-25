@@ -1,5 +1,5 @@
-import Models.Hotel;
-import Models.Room;
+import model.Hotel;
+import model.Room;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,15 +12,15 @@ public class Main {
 
 
         Filter filter = new Filter();
-        List<Hotel> test =  filter.filterHotels("საქართველო","ბათუმი",4);
-        List<Room> testroom = filter.filterRooms(test,115);
-        for (Hotel hotel:test)
-        {
-            System.out.printf(hotel.getName());
-            for (Room room : testroom)
-            {
-                System.out.println("  " + room.getNumber());
+        List<Hotel> test =  filter.filterHotels("საქართველო","ბათუმი",4, 115);
+        for (Hotel hotel:test) {
+
+            System.out.printf(hotel.getName() + ":");
+            for (int i = 0; i < hotel.getRooms().size(); i++){
+
+                System.out.printf("  " + hotel.getRooms().get(i).getNumber());
             }
+            System.out.printf("\n");
         }
 
 

@@ -1,26 +1,22 @@
-package Models;
+package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel {
     private String name;
     private String country;
     private String city;
     private double stars;
-    private ArrayList<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
 
 
-    public Hotel(String name, String country, String city, int stars, ArrayList<Room> rooms) {
+    public Hotel(String name, String country, String city, double stars){
         this.name = name;
         this.country = country;
         this.city = city;
         this.stars = stars;
-        this.rooms = rooms;
     }
-
-    public Hotel(){}
-
-    public Hotel(String name, String country, String city, double stars, ArrayList<Room> filteredRooms){}
 
     public String getName() {
         return name;
@@ -54,11 +50,11 @@ public class Hotel {
         this.stars = stars;
     }
 
-    public ArrayList<Room> getRooms() {
+    public List<Room> getRooms() {
         return rooms;
     }
 
-    public void setRooms(ArrayList<Room> rooms) {
+    public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
     }
 
