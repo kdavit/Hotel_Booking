@@ -29,12 +29,12 @@ public class MyGUIForm extends JFrame {
             String price = priceField.getText();
 
             if (country.isEmpty() || city.isEmpty() || star.isEmpty() || price.isEmpty()) {
-                JOptionPane.showMessageDialog(rootPanel, "Please enter text");
+                JOptionPane.showMessageDialog(rootPanel, "გთხოვთ შეიყვანოთ ტექსტი");
             } else {
                 Filter filter = new Filter();
                 List<Hotel> test = filter.filterHotels(country, city, Integer.parseInt(star), Integer.parseInt(price));
                 if (test.isEmpty()) {
-                    JOptionPane.showMessageDialog(rootPanel, "Can't find matching hotels");
+                    JOptionPane.showMessageDialog(rootPanel, "შესაბამისი სასტუმრო ვერ მოიძებნა");
                 } else {
                     StringBuilder x = new StringBuilder();
                     for (Hotel hotel : test) {
