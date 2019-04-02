@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Filter {
 
-    public List<Hotel> hotels;
+    private List<Hotel> hotels;
 
-    {
+    public Filter() {
         try {
             hotels = DataLoader.listLoader();
         } catch (IOException e) {
@@ -21,31 +21,29 @@ public class Filter {
     public List<Hotel> filterHotels(String country, String city, double stars, double price) {
         List<Hotel> filteredHotels = new ArrayList<>();
         List<Room> filteredRooms = new ArrayList<>();
+
         for (Hotel hotel : hotels) {
-
             if (country.equals(hotel.getCountry())) {
-
                 if (city.equals(hotel.getCity())) {
-
                     if (stars == hotel.getStars()) {
-
                         filteredHotels.add(hotel);
                     }
                 }
             }
         }
 
-        for (int i = 0; i < filteredHotels.size(); i++) {
-            for (Room room : filteredHotels.get(i).getRooms()) {
+        for (Hotel filteredHotel : filteredHotels) {
+            for (Room room : filteredHotel.getRooms()) {
                 if (price == room.getPrice()) {
                     filteredRooms.add(room);
                 }
-                filteredHotels.get(i).setRooms(filteredRooms);
+                filteredHotel.setRooms(filteredRooms);
             }
         }
 
         return filteredHotels;
     }
+
 }
 
 
