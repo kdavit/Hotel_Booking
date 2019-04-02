@@ -1,3 +1,5 @@
+package helpers;
+
 import model.Hotel;
 import model.Room;
 

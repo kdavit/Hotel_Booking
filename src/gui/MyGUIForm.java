@@ -1,3 +1,6 @@
+package gui;
+
+import helpers.Filter;
 import model.Hotel;
 
 import javax.swing.*;
@@ -13,7 +16,7 @@ public class MyGUIForm extends JFrame {
 
     public MyGUIForm() {
         add(rootPanel);
-        setTitle("Filter Form");
+        setTitle("helpers.Filter Form");
         setSize(400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
